@@ -13,9 +13,20 @@ const images = [
   },
 ];
 
-const list = document.querySelector('.gallery');
+/*const list = document.querySelector('.gallery');
 const markup = images
-  .map((image) => `<li class="list-gallery new"><img scr="${image.url}" alt = "${image.alt}" width="640"  /></li>`)
+  .map((image) => `<li class="list-gallery new"><img scr = "${image.url}" alt = "${image.alt}" width="640"  /></li>`)
   .join("");
 
-list.insertAdjacentHTML('beforeend', markup);
+list.insertAdjacentHTML('beforeend', markup);*/
+
+
+
+const ulEl = document.querySelector('.gallery');
+
+images.forEach(el => {
+  ulEl.insertAdjacentHTML(
+    'afterbegin',
+    `<li><img src = "${el.url}" alt = "${el.alt}"  width = "150" height = "100" /></li>`,
+  );
+});
